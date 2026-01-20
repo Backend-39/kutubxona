@@ -30,7 +30,12 @@ urlpatterns = [
     path("talabalar/<int:talaba_id>/",talaba_info_view),
     path("recordlar/",recordlar_views),
     path("recordlar/<int:record_id>/",record_info_view),
-    path("kitoblar/<int:kitob_id>/delete/confirm",kitob_delete_confirm_view),
+    path("kitoblar/<int:kitob_id>/delete/confirm/",kitob_delete_confirm_view),
     path("kitoblar/<int:kitob_id>/delete/",kitob_delete_view),
-
+    path("mualliflar/<int:muallif_id>/delete/confirm/",muallif_delete_confirm_view),
+    path("mualliflar/<int:muallif_id>/delete/",muallif_delete_view),
+    path("talabalar/<int:talaba_id>/delete/confirm/",talaba_delete_confirm_view),
+    path("talabalar/<int:talaba_id>/delete/",talaba_delete_view),
+    path("recordlar/<int:record_id>/delete/confirm/",record_delete_confirm_view),
+    path("recordlar/<int:record_id>/delete/",record_delete_view),
 ]

@@ -66,7 +66,7 @@ def kitob_delete_confirm_view(request,kitob_id):
     kitob=Kitob.objects.get(id=kitob_id)
     context={
         "name": f"{kitob.nomi}",
-        "yes_link": f"/kitoblar/{kitob.id}/delete",
+        "yes_link": f"/kitoblar/{kitob.id}/delete/",
         "no_link": "/kitoblar/"
     }
     return render(request,"delete_confirm.html",context)
@@ -75,3 +75,45 @@ def kitob_delete_view(request,kitob_id):
     kitob=Kitob.objects.get(id=kitob_id)
     kitob.delete()
     return redirect("/kitoblar/")
+
+def muallif_delete_confirm_view(request,muallif_id):
+    muallif=Muallif.objects.get(id=muallif_id)
+    context={
+        "name": f"{muallif.ism} {muallif.familiya}",
+        "yes_link": f"/mualliflar/{muallif.id}/delete/",
+        "no_link": "/mualliflar/"
+    }
+    return render(request,"delete_confirm.html",context)
+
+def muallif_delete_view(request,muallif_id):
+    muallif=Muallif.objects.get(id=muallif_id)
+    muallif.delete()
+    return redirect("/mualliflar/")
+
+def talaba_delete_confirm_view(request,talaba_id):
+    talaba=Talaba.objects.get(id=talaba_id)
+    context={
+        "name": f"{talaba.ism} {talaba.familiya} {talaba.otasining_ismi}",
+        "yes_link": f"/talabalar/{talaba.id}/delete/",
+        "no_link": "/talabalar/"
+    }
+    return render(request,"delete_confirm.html",context)
+
+def talaba_delete_view(request,talaba_id):
+    talaba=Talaba.objects.get(id=talaba_id)
+    talaba.delete()
+    return redirect("/talabalar/")
+
+def record_delete_confirm_view(request,record_id):
+    record=Record.objects.get(id=record_id)
+    context={
+        "name": f"{record.kitob} | {record.talaba} | {record.admin} | {record.olingan_sana}\n",
+        "yes_link": f"/recordlar/{record.id}/delete/",
+        "no_link": "/recordlar/"
+    }
+    return render(request,"delete_confirm.html",context)
+
+def record_delete_view(request,record_id):
+    record=Record.objects.get(id=record_id)
+    record.delete()
+    return redirect("/recordlar/")

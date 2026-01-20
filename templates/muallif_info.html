@@ -7,5 +7,11 @@
     <a href="/kitoblar/{{kitob.id}}/">{{ forloop.counter }}. {{ kitob.nomi }} </a>
     <br>
 {% endfor %}
+<br>
+<a href="/mualliflar/{{muallif.id}}/delete/confirm/">
+    <button>
+        Muallifni o'chirish
+    </button>
+</a>
 <hr>
 <a href="/mualliflar/">Ortga qaytish</a>

@@ -2,6 +2,12 @@
 <hr>
 {% for talaba in talabalar %}
     <a href="/talabalar/{{talaba.id}}/">{{forloop.counter}}. {{talaba.ism}} {{talaba.familiya}} {{talaba.otasining_ismi}} </a>
+    <a href="/talabalar/{{talaba.id}}/delete/confirm/" style="margin-left: 20px;">
+        <button>
+            O'chirish
+        </button>
+    </a>
+    <br>
     <br>
 {% endfor %}
 <hr>

@@ -2,6 +2,12 @@
 
 {% for muallif in mualliflar %}
     <a href="/mualliflar/{{muallif.id}}/"> {{forloop.counter}}. {{ muallif.ism }} {{ muallif.familiya }} </a>
+    <a href="/mualliflar/{{muallif.id}}/delete/confirm/" style="margin-left: 20px;">
+        <button>
+            O'chirish
+        </button>
+    </a>
+    <br>
     <br>
 {% endfor %}
 <hr>

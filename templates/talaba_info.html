@@ -12,5 +12,11 @@
     <a href="/recordlar/{{record.id}}/"> {{forloop.counter}}. {{record.kitob.nomi}} | {{record.olingan_sana}} </a>
     <br>
 {% endfor %}
+<br>
+<a href="/talabalar/{{talaba.id}}/delete/confirm/">
+    <button>
+        Talabani o'chirish
+    </button>
+</a>
 <hr>
 <a href="/talabalar/">Ortga qaytish</a>
